@@ -2,11 +2,6 @@
   "version": 1,
   "nodes": [
     {
-      "id": "agent-lifecycle-manager",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
       "id": "architect",
       "type": "agent",
       "layer": "variant:co-unity"
@@ -44,7 +39,7 @@
     {
       "id": "decision-record",
       "type": "skill",
-      "layer": "variant:co-unity"
+      "layer": "common"
     },
     {
       "id": "doc-extractor",
@@ -58,11 +53,6 @@
     },
     {
       "id": "evidence-ledger",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
-      "id": "explain-me",
       "type": "skill",
       "layer": "variant:co-unity"
     },
@@ -83,26 +73,6 @@
     },
     {
       "id": "handoff",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
-      "id": "i18n-audit",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
-      "id": "i18n-formatting",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
-      "id": "i18n-layout",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
-      "id": "i18n-locale-config",
       "type": "skill",
       "layer": "variant:co-unity"
     },
@@ -252,11 +222,6 @@
       "layer": "variant:co-unity"
     },
     {
-      "id": "project-review",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
       "id": "README",
       "type": "agent",
       "layer": "variant:co-unity"
@@ -282,11 +247,6 @@
       "layer": "variant:co-unity"
     },
     {
-      "id": "script-lifecycle-manager",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
       "id": "security-monitor",
       "type": "agent",
       "layer": "variant:co-unity"
@@ -294,12 +254,7 @@
     {
       "id": "security-scan",
       "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
-      "id": "skill-lifecycle-manager",
-      "type": "skill",
-      "layer": "variant:co-unity"
+      "layer": "L0"
     },
     {
       "id": "stack-setup",
@@ -322,22 +277,7 @@
       "layer": "variant:co-unity"
     },
     {
-      "id": "translate",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
       "id": "unity-custom-package",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
-      "id": "update-bun-packages",
-      "type": "skill",
-      "layer": "variant:co-unity"
-    },
-    {
-      "id": "validate-docs-links",
       "type": "skill",
       "layer": "variant:co-unity"
     },
@@ -350,26 +290,9 @@
       "id": "vr-ux-designer",
       "type": "agent",
       "layer": "variant:co-unity"
-    },
-    {
-      "id": "zod-contract-gate",
-      "type": "skill",
-      "layer": "variant:co-unity"
     }
   ],
   "edges": [
-    {
-      "type": "composes_with",
-      "from": "agent-lifecycle-manager",
-      "to": "skill-lifecycle-manager",
-      "source": "relates_to",
-      "symmetric": true,
-      "provenance": {
-        "file": "templates/co-unity/skills/agent-lifecycle-manager/SKILL.md",
-        "field": "relates_to",
-        "index": 0
-      }
-    },
     {
       "type": "references",
       "from": "architect",
@@ -612,18 +535,6 @@
       "source": "prose"
     },
     {
-      "type": "references",
-      "from": "decision-record",
-      "to": "evidence-ledger",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "evidence-ledger",
-      "to": "decision-record",
-      "source": "prose"
-    },
-    {
       "type": "produces",
       "from": "evidence-ledger",
       "to": "output_type.preflight_audit",
@@ -773,78 +684,6 @@
       "type": "references",
       "from": "handoff",
       "to": "system-design-doc",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-audit",
-      "to": "i18n-formatting",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-audit",
-      "to": "i18n-layout",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-audit",
-      "to": "i18n-locale-config",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-formatting",
-      "to": "i18n-layout",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-formatting",
-      "to": "i18n-locale-config",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-formatting",
-      "to": "translate",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-layout",
-      "to": "i18n-formatting",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-layout",
-      "to": "i18n-locale-config",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-layout",
-      "to": "translate",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-locale-config",
-      "to": "i18n-formatting",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-locale-config",
-      "to": "i18n-layout",
-      "source": "prose"
-    },
-    {
-      "type": "references",
-      "from": "i18n-locale-config",
-      "to": "translate",
       "source": "prose"
     },
     {
@@ -1559,24 +1398,6 @@
       "source": "required_skills"
     },
     {
-      "type": "references",
-      "from": "security-scan",
-      "to": "update-bun-packages",
-      "source": "prose"
-    },
-    {
-      "type": "composes_with",
-      "from": "skill-lifecycle-manager",
-      "to": "script-lifecycle-manager",
-      "source": "relates_to",
-      "symmetric": true,
-      "provenance": {
-        "file": "templates/co-unity/skills/skill-lifecycle-manager/SKILL.md",
-        "field": "relates_to",
-        "index": 0
-      }
-    },
-    {
       "type": "used_by",
       "from": "system-design-doc",
       "to": "architect",
@@ -1770,18 +1591,6 @@
       "from": "test-driven-development",
       "to": "test-runner",
       "source": "skill_manifest"
-    },
-    {
-      "type": "composes_with",
-      "from": "translate",
-      "to": "documentation-writing",
-      "source": "relates_to",
-      "symmetric": true,
-      "provenance": {
-        "file": "templates/co-unity/skills/translate/SKILL.md",
-        "field": "relates_to",
-        "index": 0
-      }
     },
     {
       "type": "used_by",
