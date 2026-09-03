@@ -287,6 +287,11 @@
       "layer": "L0"
     },
     {
+      "id": "architecture-doc",
+      "type": "skill",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "audit-workspace",
       "type": "skill",
       "layer": "L0"
@@ -327,6 +332,11 @@
       "layer": "variant:co-abap"
     },
     {
+      "id": "code-mapper",
+      "type": "agent",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "code-review",
       "type": "skill",
       "layer": "variant:co-develop"
@@ -335,6 +345,16 @@
       "id": "code-writer",
       "type": "agent",
       "layer": "variant:co-abap"
+    },
+    {
+      "id": "codex",
+      "type": "skill",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "codex-reconcile",
+      "type": "agent",
+      "layer": "variant:co-unity"
     },
     {
       "id": "communications-lead",
@@ -514,6 +534,11 @@
       "layer": "variant:co-deck"
     },
     {
+      "id": "doc-extractor",
+      "type": "agent",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "docs-writer",
       "type": "agent",
       "layer": "L0"
@@ -582,6 +607,11 @@
       "layer": "variant:co-news"
     },
     {
+      "id": "feature-requirement-doc",
+      "type": "skill",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "fi-analyst",
       "type": "agent",
       "layer": "variant:co-abap"
@@ -642,6 +672,11 @@
       "layer": "variant:co-security"
     },
     {
+      "id": "finding-verifier",
+      "type": "agent",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "fiori-developer",
       "type": "agent",
       "layer": "variant:co-abap"
@@ -700,6 +735,11 @@
       "layer": "variant:co-game"
     },
     {
+      "id": "gate-preflight",
+      "type": "agent",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "gateguard",
       "type": "skill",
       "layer": "L0"
@@ -738,6 +778,11 @@
       "id": "handbook-writer",
       "type": "agent",
       "layer": "variant:co-deck"
+    },
+    {
+      "id": "handoff",
+      "type": "skill",
+      "layer": "variant:co-unity"
     },
     {
       "id": "harness-verification",
@@ -1007,6 +1052,11 @@
       "layer": "variant:co-game"
     },
     {
+      "id": "output_type.architecture_doc",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "output_type.attack_hypotheses",
       "type": "output_type",
       "layer": "variant:co-security"
@@ -1062,6 +1112,11 @@
       "layer": "variant:co-hr"
     },
     {
+      "id": "output_type.changeset",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "output_type.classification_groundwork",
       "type": "output_type",
       "layer": "variant:co-export"
@@ -1085,6 +1140,16 @@
       "id": "output_type.closure_record",
       "type": "output_type",
       "layer": "variant:co-work"
+    },
+    {
+      "id": "output_type.code_inventory",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "output_type.codex_pages",
+      "type": "output_type",
+      "layer": "variant:co-unity"
     },
     {
       "id": "output_type.communication_plan",
@@ -1157,9 +1222,19 @@
       "layer": "variant:co-price"
     },
     {
+      "id": "output_type.design_adr",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "output_type.design_direction",
       "type": "output_type",
       "layer": "variant:co-design"
+    },
+    {
+      "id": "output_type.design_doc",
+      "type": "output_type",
+      "layer": "variant:co-unity"
     },
     {
       "id": "output_type.design_review_record",
@@ -1180,6 +1255,11 @@
       "id": "output_type.discovery_review",
       "type": "output_type",
       "layer": "variant:co-design"
+    },
+    {
+      "id": "output_type.doc_extract",
+      "type": "output_type",
+      "layer": "variant:co-unity"
     },
     {
       "id": "output_type.document_set",
@@ -1245,6 +1325,11 @@
       "id": "output_type.feasibility_notes",
       "type": "output_type",
       "layer": "variant:co-consult"
+    },
+    {
+      "id": "output_type.feature_backlog",
+      "type": "output_type",
+      "layer": "variant:co-unity"
     },
     {
       "id": "output_type.feel_requirements",
@@ -1340,6 +1425,11 @@
       "id": "output_type.html_deck",
       "type": "output_type",
       "layer": "variant:co-deck"
+    },
+    {
+      "id": "output_type.implementation",
+      "type": "output_type",
+      "layer": "variant:co-unity"
     },
     {
       "id": "output_type.implementation_blueprint",
@@ -1452,6 +1542,11 @@
       "layer": "variant:co-security"
     },
     {
+      "id": "output_type.merge_record",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "output_type.module_impact_notes",
       "type": "output_type",
       "layer": "variant:co-abap"
@@ -1492,9 +1587,24 @@
       "layer": "variant:co-hr"
     },
     {
+      "id": "output_type.persisted_plan",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "output_type.plan_audit",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "output_type.plan_review_record",
       "type": "output_type",
       "layer": "variant:co-safety"
+    },
+    {
+      "id": "output_type.preflight_audit",
+      "type": "output_type",
+      "layer": "variant:co-unity"
     },
     {
       "id": "output_type.price_recommendation",
@@ -1572,6 +1682,11 @@
       "layer": "variant:co-security"
     },
     {
+      "id": "output_type.requirements_doc",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "output_type.research_findings",
       "type": "output_type",
       "layer": "variant:co-design"
@@ -1580,6 +1695,11 @@
       "id": "output_type.research_pack",
       "type": "output_type",
       "layer": "variant:co-deck"
+    },
+    {
+      "id": "output_type.review_brief",
+      "type": "output_type",
+      "layer": "variant:co-unity"
     },
     {
       "id": "output_type.review_findings",
@@ -1782,9 +1902,24 @@
       "layer": "variant:co-security"
     },
     {
+      "id": "output_type.verification_bindings",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "output_type.verification_ledger",
       "type": "output_type",
       "layer": "variant:co-news"
+    },
+    {
+      "id": "output_type.verification_report",
+      "type": "output_type",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "output_type.verified_findings",
+      "type": "output_type",
+      "layer": "variant:co-unity"
     },
     {
       "id": "output_type.version_record",
@@ -1851,6 +1986,16 @@
       "id": "performance-tuning",
       "type": "skill",
       "layer": "variant:co-abap"
+    },
+    {
+      "id": "plan-validator",
+      "type": "agent",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "plastic-checkin",
+      "type": "skill",
+      "layer": "variant:co-unity"
     },
     {
       "id": "pm",
@@ -2198,6 +2343,36 @@
       "layer": "variant:co-security"
     },
     {
+      "id": "procedure.co-unity.environment-bootstrap",
+      "type": "procedure",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "procedure.co-unity.feature-implementation",
+      "type": "procedure",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "procedure.co-unity.feature-planning",
+      "type": "procedure",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "procedure.co-unity.feature-review",
+      "type": "procedure",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "procedure.co-unity.release-verification",
+      "type": "procedure",
+      "layer": "variant:co-unity"
+    },
+    {
+      "id": "procedure.co-unity.system-design",
+      "type": "procedure",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "procedure.co-work.distribution-integration",
       "type": "procedure",
       "layer": "variant:co-work"
@@ -2304,6 +2479,11 @@
       "id": "research-analysis",
       "type": "skill",
       "layer": "L0"
+    },
+    {
+      "id": "review-angle",
+      "type": "agent",
+      "layer": "variant:co-unity"
     },
     {
       "id": "roo-qualification-worksheet",
@@ -2581,6 +2761,11 @@
       "layer": "L0"
     },
     {
+      "id": "system-design-doc",
+      "type": "skill",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "talent-acquisition-specialist",
       "type": "agent",
       "layer": "variant:co-hr"
@@ -2681,6 +2866,11 @@
       "layer": "variant:co-design"
     },
     {
+      "id": "unity-custom-package",
+      "type": "skill",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "update-bun-packages",
       "type": "skill",
       "layer": "L0"
@@ -2723,6 +2913,11 @@
       "layer": "L0"
     },
     {
+      "id": "vc-checkin",
+      "type": "agent",
+      "layer": "variant:co-unity"
+    },
+    {
       "id": "verify-authorization",
       "type": "skill",
       "layer": "variant:co-security"
@@ -2746,6 +2941,11 @@
       "id": "visual-editor",
       "type": "agent",
       "layer": "variant:co-news"
+    },
+    {
+      "id": "vr-ux-designer",
+      "type": "agent",
+      "layer": "variant:co-unity"
     },
     {
       "id": "workstream-lead",
@@ -3514,6 +3714,93 @@
       "source": "prose"
     },
     {
+      "type": "used_by",
+      "from": "architecture-doc",
+      "to": "architect",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "references",
+      "from": "architecture-doc",
+      "to": "codex",
+      "source": "prose"
+    },
+    {
+      "type": "relates_to",
+      "from": "architecture-doc",
+      "to": "codex",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/architecture-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 1
+      }
+    },
+    {
+      "type": "references",
+      "from": "architecture-doc",
+      "to": "decision-record",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "architecture-doc",
+      "to": "documentation-writing",
+      "source": "prose"
+    },
+    {
+      "type": "relates_to",
+      "from": "architecture-doc",
+      "to": "documentation-writing",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/architecture-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 2
+      }
+    },
+    {
+      "type": "follows",
+      "from": "architecture-doc",
+      "to": "feature-requirement-doc",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/architecture-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 0
+      }
+    },
+    {
+      "type": "references",
+      "from": "architecture-doc",
+      "to": "feature-requirement-doc",
+      "source": "prose"
+    },
+    {
+      "type": "produces",
+      "from": "architecture-doc",
+      "to": "output_type.architecture_doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "phase",
+      "from": "architecture-doc",
+      "to": "phase2",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "references",
+      "from": "architecture-doc",
+      "to": "system-design-doc",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "architecture-doc",
+      "to": "test-driven-development",
+      "source": "prose"
+    },
+    {
       "type": "composes_with",
       "from": "audit-workspace",
       "to": "create-variant",
@@ -3810,6 +4097,23 @@
     {
       "type": "used_by",
       "from": "code-review",
+      "to": "finding-verifier",
+      "source": "required_skills",
+      "provenance": {
+        "file": "templates/co-unity/agents/finding-verifier.md",
+        "field": "required_skills",
+        "index": 0
+      }
+    },
+    {
+      "type": "used_by",
+      "from": "code-review",
+      "to": "finding-verifier",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "code-review",
       "to": "game-debugger",
       "source": "skill_manifest"
     },
@@ -3829,6 +4133,18 @@
       "type": "produces",
       "from": "code-review",
       "to": "output_type.defect_sweep_report",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "code-review",
+      "to": "output_type.review_brief",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "code-review",
+      "to": "output_type.review_findings",
       "source": "procedure_schema"
     },
     {
@@ -3858,7 +4174,19 @@
     {
       "type": "phase",
       "from": "code-review",
+      "to": "phase4",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "code-review",
       "to": "phase5",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "code-review",
+      "to": "pm",
       "source": "skill_manifest"
     },
     {
@@ -3872,6 +4200,75 @@
         "field": "relates_to",
         "index": 0
       }
+    },
+    {
+      "type": "used_by",
+      "from": "code-review",
+      "to": "review-angle",
+      "source": "required_skills",
+      "provenance": {
+        "file": "templates/co-unity/agents/review-angle.md",
+        "field": "required_skills",
+        "index": 0
+      }
+    },
+    {
+      "type": "used_by",
+      "from": "code-review",
+      "to": "review-angle",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "follows",
+      "from": "codex",
+      "to": "architecture-doc",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/codex/SKILL.md",
+        "field": "relates_to",
+        "index": 0
+      }
+    },
+    {
+      "type": "used_by",
+      "from": "codex",
+      "to": "codex-reconcile",
+      "source": "required_skills",
+      "provenance": {
+        "file": "templates/co-unity/agents/codex-reconcile.md",
+        "field": "required_skills",
+        "index": 0
+      }
+    },
+    {
+      "type": "used_by",
+      "from": "codex",
+      "to": "codex-reconcile",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "codex",
+      "to": "phase5",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "composes_with",
+      "from": "codex",
+      "to": "plastic-checkin",
+      "source": "relates_to",
+      "symmetric": true,
+      "provenance": {
+        "file": "templates/co-unity/skills/codex/SKILL.md",
+        "field": "relates_to",
+        "index": 1
+      }
+    },
+    {
+      "type": "references",
+      "from": "codex",
+      "to": "plastic-checkin",
+      "source": "prose"
     },
     {
       "type": "composes_with",
@@ -5101,6 +5498,12 @@
       "source": "procedure_schema"
     },
     {
+      "type": "produces",
+      "from": "evidence-ledger",
+      "to": "output_type.preflight_audit",
+      "source": "procedure_schema"
+    },
+    {
       "type": "references",
       "from": "evidence-ledger",
       "to": "source-verification-ledger",
@@ -5336,6 +5739,87 @@
         "field": "relates_to",
         "index": 1
       }
+    },
+    {
+      "type": "used_by",
+      "from": "feature-requirement-doc",
+      "to": "architect",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "enables",
+      "from": "feature-requirement-doc",
+      "to": "architecture-doc",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/feature-requirement-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 1
+      }
+    },
+    {
+      "type": "references",
+      "from": "feature-requirement-doc",
+      "to": "architecture-doc",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "feature-requirement-doc",
+      "to": "decision-record",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "feature-requirement-doc",
+      "to": "documentation-writing",
+      "source": "prose"
+    },
+    {
+      "type": "relates_to",
+      "from": "feature-requirement-doc",
+      "to": "documentation-writing",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/feature-requirement-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 2
+      }
+    },
+    {
+      "type": "produces",
+      "from": "feature-requirement-doc",
+      "to": "output_type.requirements_doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "phase",
+      "from": "feature-requirement-doc",
+      "to": "phase2",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "follows",
+      "from": "feature-requirement-doc",
+      "to": "system-design-doc",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/feature-requirement-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 0
+      }
+    },
+    {
+      "type": "references",
+      "from": "feature-requirement-doc",
+      "to": "system-design-doc",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "feature-requirement-doc",
+      "to": "test-driven-development",
+      "source": "prose"
     },
     {
       "type": "references",
@@ -6338,6 +6822,65 @@
       "type": "references",
       "from": "handbook-sync-audit",
       "to": "validate-docs-links",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "handoff",
+      "to": "architecture-doc",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "handoff",
+      "to": "decision-record",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "handoff",
+      "to": "documentation-writing",
+      "source": "prose"
+    },
+    {
+      "type": "relates_to",
+      "from": "handoff",
+      "to": "documentation-writing",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/handoff/SKILL.md",
+        "field": "relates_to",
+        "index": 0
+      }
+    },
+    {
+      "type": "references",
+      "from": "handoff",
+      "to": "feature-requirement-doc",
+      "source": "prose"
+    },
+    {
+      "type": "phase",
+      "from": "handoff",
+      "to": "phase6",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "references",
+      "from": "handoff",
+      "to": "plastic-checkin",
+      "source": "prose"
+    },
+    {
+      "type": "used_by",
+      "from": "handoff",
+      "to": "pm",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "references",
+      "from": "handoff",
+      "to": "system-design-doc",
       "source": "prose"
     },
     {
@@ -8048,6 +8591,129 @@
       "type": "used_by",
       "from": "performance-tuning",
       "to": "sap-investigator",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "follows",
+      "from": "plastic-checkin",
+      "to": "code-review",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/plastic-checkin/SKILL.md",
+        "field": "relates_to",
+        "index": 0
+      }
+    },
+    {
+      "type": "relates_to",
+      "from": "plastic-checkin",
+      "to": "handoff",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/plastic-checkin/SKILL.md",
+        "field": "relates_to",
+        "index": 1
+      }
+    },
+    {
+      "type": "produces",
+      "from": "plastic-checkin",
+      "to": "output_type.changeset",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "plastic-checkin",
+      "to": "output_type.changeset",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "plastic-checkin",
+      "to": "output_type.changeset",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "plastic-checkin",
+      "to": "output_type.changeset",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "plastic-checkin",
+      "to": "output_type.changeset",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "plastic-checkin",
+      "to": "output_type.changeset",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "plastic-checkin",
+      "to": "output_type.changeset",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "phase",
+      "from": "plastic-checkin",
+      "to": "phase1",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "plastic-checkin",
+      "to": "phase2",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "plastic-checkin",
+      "to": "phase3",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "plastic-checkin",
+      "to": "phase4",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "plastic-checkin",
+      "to": "phase5",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "plastic-checkin",
+      "to": "phase6",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "plastic-checkin",
+      "to": "pm",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "plastic-checkin",
+      "to": "vc-checkin",
+      "source": "required_skills",
+      "provenance": {
+        "file": "templates/co-unity/agents/vc-checkin.md",
+        "field": "required_skills",
+        "index": 0
+      }
+    },
+    {
+      "type": "used_by",
+      "from": "plastic-checkin",
+      "to": "vc-checkin",
       "source": "skill_manifest"
     },
     {
@@ -11110,6 +11776,510 @@
     },
     {
       "type": "step_uses_skill",
+      "from": "procedure.co-unity.environment-bootstrap",
+      "to": "documentation-writing",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.environment-bootstrap",
+      "to": "output_type.verification_bindings",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "enables",
+      "from": "procedure.co-unity.environment-bootstrap",
+      "to": "procedure.co-unity.feature-planning",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.environment-bootstrap",
+      "to": "security-monitor",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.environment-bootstrap",
+      "to": "security-scan",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.environment-bootstrap",
+      "to": "stack-setup",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.environment-bootstrap",
+      "to": "test-driven-development",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.environment-bootstrap",
+      "to": "test-runner",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "code-writer",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "output_type.implementation",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "follows",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "procedure.co-unity.feature-planning",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "enables",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "procedure.co-unity.feature-review",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "test-driven-development",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "test-driven-development",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "test-runner",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-implementation",
+      "to": "vc-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "architect",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "architect",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "architect",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "architecture-doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "architecture-doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "code-mapper",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "doc-extractor",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "feature-requirement-doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "output_type.persisted_plan",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "plan-validator",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "enables",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "procedure.co-unity.feature-implementation",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "follows",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "procedure.co-unity.system-design",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "research-analysis",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "research-analysis",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "research-analysis",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-planning",
+      "to": "vc-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-review",
+      "to": "code-review",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-review",
+      "to": "code-review",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-review",
+      "to": "code-review",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-review",
+      "to": "code-writer",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-review",
+      "to": "finding-verifier",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.feature-review",
+      "to": "output_type.verified_findings",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-review",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-review",
+      "to": "pm",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "follows",
+      "from": "procedure.co-unity.feature-review",
+      "to": "procedure.co-unity.feature-implementation",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "enables",
+      "from": "procedure.co-unity.feature-review",
+      "to": "procedure.co-unity.release-verification",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-review",
+      "to": "refactoring",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-review",
+      "to": "review-angle",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-review",
+      "to": "security-monitor",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-review",
+      "to": "security-scan",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.feature-review",
+      "to": "test-driven-development",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-review",
+      "to": "test-runner",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.feature-review",
+      "to": "vc-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.release-verification",
+      "to": "codex",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.release-verification",
+      "to": "codex-reconcile",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.release-verification",
+      "to": "evidence-ledger",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.release-verification",
+      "to": "gate-preflight",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.release-verification",
+      "to": "output_type.codex_pages",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.release-verification",
+      "to": "output_type.merge_record",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.release-verification",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.release-verification",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.release-verification",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.release-verification",
+      "to": "pm",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "follows",
+      "from": "procedure.co-unity.release-verification",
+      "to": "procedure.co-unity.feature-review",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.release-verification",
+      "to": "test-driven-development",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.release-verification",
+      "to": "test-runner",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.release-verification",
+      "to": "vc-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.release-verification",
+      "to": "vc-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.system-design",
+      "to": "architect",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.system-design",
+      "to": "architect",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.system-design",
+      "to": "architect",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.system-design",
+      "to": "output_type.design_doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.system-design",
+      "to": "output_type.feature_backlog",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "procedure.co-unity.system-design",
+      "to": "output_type.merge_record",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.system-design",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.system-design",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.system-design",
+      "to": "plastic-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.system-design",
+      "to": "pm",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "enables",
+      "from": "procedure.co-unity.system-design",
+      "to": "procedure.co-unity.feature-planning",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.system-design",
+      "to": "system-design-doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.system-design",
+      "to": "system-design-doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.system-design",
+      "to": "system-design-doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
+      "from": "procedure.co-unity.system-design",
+      "to": "system-design-doc",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.system-design",
+      "to": "vc-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.system-design",
+      "to": "vc-checkin",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_by_agent",
+      "from": "procedure.co-unity.system-design",
+      "to": "vr-ux-designer",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "step_uses_skill",
       "from": "procedure.co-work.distribution-integration",
       "to": "documentation-writing",
       "source": "procedure_schema"
@@ -11428,6 +12598,12 @@
     {
       "type": "used_by",
       "from": "refactoring",
+      "to": "code-writer",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "refactoring",
       "to": "game-debugger",
       "source": "skill_manifest"
     },
@@ -11440,6 +12616,12 @@
     {
       "type": "produces",
       "from": "refactoring",
+      "to": "output_type.implementation",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "refactoring",
       "to": "output_type.tooling_adjustments",
       "source": "procedure_schema"
     },
@@ -11447,6 +12629,12 @@
       "type": "phase",
       "from": "refactoring",
       "to": "phase3",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "refactoring",
+      "to": "phase4",
       "source": "skill_manifest"
     },
     {
@@ -11544,6 +12732,18 @@
     {
       "type": "produces",
       "from": "research-analysis",
+      "to": "output_type.code_inventory",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "research-analysis",
+      "to": "output_type.doc_extract",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "research-analysis",
       "to": "output_type.feasibility_findings",
       "source": "procedure_schema"
     },
@@ -11551,6 +12751,12 @@
       "type": "produces",
       "from": "research-analysis",
       "to": "output_type.feasibility_findings",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "research-analysis",
+      "to": "output_type.plan_audit",
       "source": "procedure_schema"
     },
     {
@@ -12464,6 +13670,18 @@
       }
     },
     {
+      "type": "produces",
+      "from": "security-scan",
+      "to": "output_type.review_findings",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "security-scan",
+      "to": "output_type.security_baseline",
+      "source": "procedure_schema"
+    },
+    {
       "type": "references",
       "from": "security-scan",
       "to": "update-bun-packages",
@@ -13286,6 +14504,105 @@
       "source": "skill_manifest"
     },
     {
+      "type": "used_by",
+      "from": "system-design-doc",
+      "to": "architect",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "references",
+      "from": "system-design-doc",
+      "to": "architecture-doc",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "system-design-doc",
+      "to": "codex",
+      "source": "prose"
+    },
+    {
+      "type": "composes_with",
+      "from": "system-design-doc",
+      "to": "decision-record",
+      "source": "relates_to",
+      "symmetric": true,
+      "provenance": {
+        "file": "templates/co-unity/skills/system-design-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 1
+      }
+    },
+    {
+      "type": "references",
+      "from": "system-design-doc",
+      "to": "decision-record",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "system-design-doc",
+      "to": "documentation-writing",
+      "source": "prose"
+    },
+    {
+      "type": "relates_to",
+      "from": "system-design-doc",
+      "to": "documentation-writing",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/system-design-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 2
+      }
+    },
+    {
+      "type": "enables",
+      "from": "system-design-doc",
+      "to": "feature-requirement-doc",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/system-design-doc/SKILL.md",
+        "field": "relates_to",
+        "index": 0
+      }
+    },
+    {
+      "type": "references",
+      "from": "system-design-doc",
+      "to": "feature-requirement-doc",
+      "source": "prose"
+    },
+    {
+      "type": "produces",
+      "from": "system-design-doc",
+      "to": "output_type.design_adr",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "phase",
+      "from": "system-design-doc",
+      "to": "phase1",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "system-design-doc",
+      "to": "vr-ux-designer",
+      "source": "required_skills",
+      "provenance": {
+        "file": "templates/co-unity/agents/vr-ux-designer.md",
+        "field": "required_skills",
+        "index": 0
+      }
+    },
+    {
+      "type": "used_by",
+      "from": "system-design-doc",
+      "to": "vr-ux-designer",
+      "source": "skill_manifest"
+    },
+    {
       "type": "follows",
       "from": "talent-acquisition-strategy",
       "to": "compensation-benchmarking",
@@ -13507,6 +14824,12 @@
     {
       "type": "used_by",
       "from": "test-driven-development",
+      "to": "code-writer",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "test-driven-development",
       "to": "game-debugger",
       "source": "required_skills",
       "provenance": {
@@ -13540,6 +14863,36 @@
       "source": "procedure_schema"
     },
     {
+      "type": "produces",
+      "from": "test-driven-development",
+      "to": "output_type.verification_report",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "test-driven-development",
+      "to": "output_type.verification_report",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "test-driven-development",
+      "to": "output_type.verification_report",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "produces",
+      "from": "test-driven-development",
+      "to": "output_type.verification_report",
+      "source": "procedure_schema"
+    },
+    {
+      "type": "phase",
+      "from": "test-driven-development",
+      "to": "phase3",
+      "source": "skill_manifest"
+    },
+    {
       "type": "phase",
       "from": "test-driven-development",
       "to": "phase3",
@@ -13554,7 +14907,25 @@
     {
       "type": "phase",
       "from": "test-driven-development",
+      "to": "phase4",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "test-driven-development",
       "to": "phase5",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "test-driven-development",
+      "to": "phase5",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "test-driven-development",
+      "to": "test-runner",
       "source": "skill_manifest"
     },
     {
@@ -13816,6 +15187,59 @@
       "from": "ui-ux-design-intelligence",
       "to": "visual-designer",
       "source": "skill_manifest"
+    },
+    {
+      "type": "used_by",
+      "from": "unity-custom-package",
+      "to": "code-writer",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "phase",
+      "from": "unity-custom-package",
+      "to": "phase3",
+      "source": "skill_manifest"
+    },
+    {
+      "type": "references",
+      "from": "unity-custom-package",
+      "to": "plastic-checkin",
+      "source": "prose"
+    },
+    {
+      "type": "relates_to",
+      "from": "unity-custom-package",
+      "to": "refactoring",
+      "source": "relates_to",
+      "provenance": {
+        "file": "templates/co-unity/skills/unity-custom-package/SKILL.md",
+        "field": "relates_to",
+        "index": 1
+      }
+    },
+    {
+      "type": "composes_with",
+      "from": "unity-custom-package",
+      "to": "test-driven-development",
+      "source": "relates_to",
+      "symmetric": true,
+      "provenance": {
+        "file": "templates/co-unity/skills/unity-custom-package/SKILL.md",
+        "field": "relates_to",
+        "index": 0
+      }
+    },
+    {
+      "type": "references",
+      "from": "unity-custom-package",
+      "to": "test-driven-development",
+      "source": "prose"
+    },
+    {
+      "type": "references",
+      "from": "unity-custom-package",
+      "to": "version",
+      "source": "prose"
     },
     {
       "type": "follows",

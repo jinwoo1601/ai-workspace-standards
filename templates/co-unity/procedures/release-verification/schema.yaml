@@ -1,0 +1,89 @@
+schema_version: "1.0"
+procedure_id: co-unity-release-verification
+variant: co-unity
+version: "0.1.0"
+title: "Release Verification, Acceptance and Codex"
+phase: 5
+status: active
+owner_agent: gate-preflight
+purpose: >
+  Assemble the evidence for acceptance, present G2 to the human, and — only after
+  the human rules — write the as-built codex and close the feature out. Preflight
+  PASS is not acceptance; the codex is never written before G2; and the codex
+  commit, the merge checkin and the bookkeeping commit are three separate
+  changesets in that order.
+inputs:
+  - implementation
+  - verification_report
+preconditions:
+  - "The review cycle is complete and every verified finding carries a human ruling."
+  - "memory/workflow.md matches reality as reported by cm.exe status --header."
+steps:
+  - id: 1
+    agent_key: gate-preflight
+    skill_key: evidence-ledger
+    output_type: preflight_audit
+    description: >
+      Audit each acceptance item against on-disk evidence, read-only
+      (cm.exe status/log/find/cat only), and close with an explicit verdict line.
+      Preflight PASS is not acceptance — it is only the evidence the human rules on.
+  - id: 2
+    agent_key: test-runner
+    skill_key: test-driven-development
+    output_type: verification_report
+    description: >
+      Run the full bound battery including the Unity Editor test suites. Gates the
+      bindings mark human-only — authored content, the in-headset playtest — need a
+      recorded human statement as evidence and are never assumed to have passed.
+  - id: 3
+    agent_key: codex-reconcile
+    skill_key: codex
+    output_type: codex_pages
+    description: >
+      Precondition — G2 has been ruled by the human, in conversation, with the
+      date, and the caller states that ruling in the dispatch. Only then read
+      docs/codex/CODEX.md for the schema and write the as-built pages. Design docs
+      are intent and stay untouched; the codex is as-built and is the
+      teammate-facing entry point. The two areas are never merged.
+  - id: 4
+    agent_key: vc-checkin
+    skill_key: plastic-checkin
+    output_type: changeset
+    description: >
+      Check the codex pages in as their own changeset — first of the three
+      close-out changesets.
+  - id: 5
+    agent_key: pm
+    skill_key: plastic-checkin
+    output_type: merge_record
+    description: >
+      The merge ceremony, run by the PM on the main thread and never delegated.
+      Content conflicts go to the human's Windows Mergetool with the documented
+      click path; the PM records source, destination and how each conflict was
+      resolved.
+  - id: 6
+    agent_key: vc-checkin
+    skill_key: plastic-checkin
+    output_type: changeset
+    description: >
+      The bookkeeping commit — memory/workflow.md (the row retired once the
+      branch has merged), the session log and the changelog — always a separate
+      changeset from work commits and always last.
+outputs:
+  - type: codex_pages
+  - type: merge_record
+relations:
+  - type: follows
+    target: procedure.co-unity.feature-review
+quality_gates:
+  - "G2 is an explicit in-conversation human ruling recorded with its date. The gate ruling belongs to the human; nothing crosses G2 on the assistant's judgment."
+  - "The codex is written only after the G2 ruling, never before and never in anticipation of it."
+  - "Codex commit, merge checkin and bookkeeping commit are three separate changesets, in that order."
+  - "Every human-only gate has a recorded human statement as evidence."
+evidence:
+  - "memory/reports/<YYYY-MM-DD>-gate-preflight-<feature>.md"
+  - "docs/codex/log.md"
+  - "memory/workflow.md"
+failure_modes:
+  - "Preflight returns FAIL: remediate the named items and re-run preflight. Never present a failing preflight to the human as acceptable."
+  - "G2 has not been ruled: steps 3 to 6 do not run. Do not proceed on silence, enthusiasm, or a 'looks good' about anything other than the gate itself."

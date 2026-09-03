@@ -1,0 +1,283 @@
+{
+  "name": "co-unity",
+  "description": "Gated Unity/VR game-development workflow. Work runs on two decoupled tracks: a design track that takes a topic from agreed scope (G0) to a human-locked design document and a feature backlog (G1), and an implementation track that takes one backlog entry through reconnaissance, requirements, architecture, a persisted build plan, implementation, a verified review cycle and human acceptance (G2) to an as-built codex and a merge. Process documents are written before implementation and the codex only after G2; design (intent, immutable once locked) and codex (as-built, teammate-facing) are two areas that are never merged. Version control is Plastic SCM (Unity Version Control) driven as cm.exe from WSL — the inherited git-shaped harness items are documented as inert. The PM is the main thread: it keeps judgment, dedup, gate presentation, human rulings and the merge ceremony, and dispatches only write-authorship and verification, which never run on the main thread. The per-project VR performance budget (frame-rate target such as 72-90 fps, comfort, allocation) is a first-class non-functional requirement carried from requirements through architecture to verification.",
+  "variant_type": "game",
+  "status": "beta",
+  "version": "0.1.0",
+  "inherits_common": "templates/common",
+  "created_at": "2026-09-01",
+  "lifecycle": {
+    "statusSince": "2026-09-01",
+    "lastTransition": "initial → beta on 2026-09-01",
+    "stablePromotedOn": null
+  },
+  "agents": [
+    {
+      "name": "architect",
+      "file": "agents/architect.md"
+    },
+    {
+      "name": "code-mapper",
+      "file": "agents/code-mapper.md"
+    },
+    {
+      "name": "code-writer",
+      "file": "agents/code-writer.md"
+    },
+    {
+      "name": "codex-reconcile",
+      "file": "agents/codex-reconcile.md"
+    },
+    {
+      "name": "doc-extractor",
+      "file": "agents/doc-extractor.md"
+    },
+    {
+      "name": "finding-verifier",
+      "file": "agents/finding-verifier.md"
+    },
+    {
+      "name": "gate-preflight",
+      "file": "agents/gate-preflight.md"
+    },
+    {
+      "name": "plan-validator",
+      "file": "agents/plan-validator.md"
+    },
+    {
+      "name": "review-angle",
+      "file": "agents/review-angle.md"
+    },
+    {
+      "name": "security-monitor",
+      "file": "agents/security-monitor.md"
+    },
+    {
+      "name": "stack-setup",
+      "file": "agents/stack-setup.md"
+    },
+    {
+      "name": "test-runner",
+      "file": "agents/test-runner.md"
+    },
+    {
+      "name": "vc-checkin",
+      "file": "agents/vc-checkin.md"
+    },
+    {
+      "name": "vr-ux-designer",
+      "file": "agents/vr-ux-designer.md"
+    },
+    {
+      "name": "pm",
+      "file": "agents/pm.md"
+    }
+  ],
+  "skills": [
+    {
+      "name": "architecture-doc",
+      "file": "skills/architecture-doc/SKILL.md"
+    },
+    {
+      "name": "code-review",
+      "file": "skills/code-review/SKILL.md"
+    },
+    {
+      "name": "codex",
+      "file": "skills/codex/SKILL.md"
+    },
+    {
+      "name": "feature-requirement-doc",
+      "file": "skills/feature-requirement-doc/SKILL.md"
+    },
+    {
+      "name": "handoff",
+      "file": "skills/handoff/SKILL.md"
+    },
+    {
+      "name": "plastic-checkin",
+      "file": "skills/plastic-checkin/SKILL.md"
+    },
+    {
+      "name": "refactoring",
+      "file": "skills/refactoring/SKILL.md"
+    },
+    {
+      "name": "system-design-doc",
+      "file": "skills/system-design-doc/SKILL.md"
+    },
+    {
+      "name": "test-driven-development",
+      "file": "skills/test-driven-development/SKILL.md"
+    },
+    {
+      "name": "unity-custom-package",
+      "file": "skills/unity-custom-package/SKILL.md"
+    }
+  ],
+  "displayName": "co-unity",
+  "agent_overrides": {
+    "pm": {
+      "type": "additive",
+      "reason": "co-unity runs the PM as the main thread rather than as a dispatcher: it keeps judgment, dedup, gate presentation, the human G1/G2 rulings and the cm.exe merge ceremony, and delegates only write-authorship and verification. The additive override supplies the two-track governance workflow with its human gates, the 15-persona roster with per-persona access scopes, and a dispatch protocol that forbids verification on the main thread, requires read-only recon before planning, routes all reviews through the feature-review procedure, and admits codex-reconcile only after a stated G2 ruling.",
+      "since": "2026-09-01",
+      "reviewed_by": "architect",
+      "overrides": [
+        "agent-roster",
+        "governance-workflow",
+        "dispatch-protocol"
+      ]
+    }
+  },
+  "skill_manifest": {
+    "variant_specific": [
+      {
+        "name": "system-design-doc",
+        "layer": "workspace",
+        "used_by_agents": [
+          "architect",
+          "vr-ux-designer"
+        ],
+        "phases": [
+          1
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "feature-requirement-doc",
+        "layer": "workspace",
+        "used_by_agents": [
+          "architect"
+        ],
+        "phases": [
+          2
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "architecture-doc",
+        "layer": "workspace",
+        "used_by_agents": [
+          "architect"
+        ],
+        "phases": [
+          2
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "handoff",
+        "layer": "workspace",
+        "used_by_agents": [
+          "pm"
+        ],
+        "phases": [
+          6
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "code-review",
+        "layer": "workspace",
+        "used_by_agents": [
+          "review-angle",
+          "finding-verifier",
+          "pm"
+        ],
+        "phases": [
+          4
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "test-driven-development",
+        "layer": "workspace",
+        "used_by_agents": [
+          "code-writer",
+          "test-runner"
+        ],
+        "phases": [
+          3,
+          4,
+          5
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "refactoring",
+        "layer": "workspace",
+        "used_by_agents": [
+          "code-writer"
+        ],
+        "phases": [
+          4
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "unity-custom-package",
+        "layer": "workspace",
+        "used_by_agents": [
+          "code-writer"
+        ],
+        "phases": [
+          3
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "plastic-checkin",
+        "layer": "workspace",
+        "used_by_agents": [
+          "vc-checkin",
+          "pm"
+        ],
+        "phases": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "platform_parity": "skip"
+      },
+      {
+        "name": "codex",
+        "layer": "workspace",
+        "used_by_agents": [
+          "codex-reconcile"
+        ],
+        "phases": [
+          5
+        ],
+        "platform_parity": "skip"
+      }
+    ]
+  },
+  "script_manifest": {
+    "variant_scripts_dir": "scripts/co-unity",
+    "local": [
+      {
+        "name": "plastic-bootstrap",
+        "path": "scripts/co-unity/plastic-bootstrap.ts"
+      }
+    ],
+    "external": []
+  },
+  "promotionHold": {
+    "hold": false,
+    "reason": "Owner approved promotion in plain language on 2026-09-03 (in conversation, after the adoption review and two green rehearsals). The hold stays true as the mechanical guard until Phase C is started deliberately; flipping it to false is step 0 of the run. Green readiness checks were never the approval.",
+    "since": "2026-09-01"
+  },
+  "phaseAComplete": false,
+  "promotionChecklist": "PROMOTION_CHECKLIST.md",
+  "betaLifecycleSummary": {
+    "betaEngagements": 0,
+    "betaBugs": 0,
+    "betaAgeInMonths": 0,
+    "promotionEligible": false,
+    "missingCriteria": [],
+    "lastSynced": "2026-09-03T08:23:09.102Z"
+  }
+}

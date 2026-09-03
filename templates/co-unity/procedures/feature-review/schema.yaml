@@ -1,0 +1,92 @@
+schema_version: "1.0"
+procedure_id: co-unity-feature-review
+variant: co-unity
+version: "0.1.0"
+title: "Feature Review Cycle"
+phase: 4
+status: active
+owner_agent: pm
+purpose: >
+  Review an implemented feature through independent angles, verify every
+  surviving finding before it reaches the human, take a ruling on each, and apply
+  only the rulings marked fix. Reviews always run through this procedure and never
+  ad hoc: the PM is the judge — dedup, presentation and rulings stay on the main
+  thread while every angle and every verification runs in a subagent.
+inputs:
+  - implementation
+preconditions:
+  - "The implementation is checked in and the bound gates were green at that changeset."
+  - "The base revision for the review is known and stated (cm.exe cat \"<path>#cs:N\")."
+steps:
+  - id: 1
+    agent_key: pm
+    skill_key: code-review
+    output_type: review_brief
+    description: >
+      Write the review brief — scope, base revision, the angles the depth profile
+      calls for, and what is explicitly out of scope. The brief is written to the
+      session scratchpad by absolute path and never into the project tree.
+  - id: 2
+    agent_key: review-angle
+    skill_key: code-review
+    output_type: review_findings
+    description: >
+      One dispatch per roster angle named by the depth profile, each read-only
+      and each seeing only its own angle. Negative results are findings: an angle
+      that finds nothing says so.
+  - id: 2.5
+    agent_key: security-monitor
+    skill_key: security-scan
+    output_type: review_findings
+    description: >
+      Optional security angle — secret exposure, dependency and package audit.
+      Skip when the change touches no secrets, no dependencies and no
+      configuration.
+  - id: 3
+    agent_key: finding-verifier
+    skill_key: code-review
+    output_type: verified_findings
+    description: >
+      One dispatch per finding that survives the PM's dedup on the main thread,
+      each independently returning CONFIRMED, REFUTED, or CONFIRMED-AS-CLARITY
+      against the source.
+      A human ruling per finding follows — fix, defer or reject. No finding
+      reaches the human unverified.
+  - id: 4
+    agent_key: code-writer
+    skill_key: refactoring
+    output_type: implementation
+    description: >
+      Apply only the findings the human ruled fix, surgically. The reviewed
+      code's shape is canon: do not take the opportunity to restructure
+      surrounding code.
+  - id: 5
+    agent_key: test-runner
+    skill_key: test-driven-development
+    output_type: verification_report
+    description: >
+      Re-run the bound gates after the fixes and report each result against its
+      expected-green pattern.
+  - id: 6
+    agent_key: vc-checkin
+    skill_key: plastic-checkin
+    output_type: changeset
+    description: >
+      Check the review fixes in and return cs:N or BLOCKED.
+outputs:
+  - type: verified_findings
+relations:
+  - type: follows
+    target: procedure.co-unity.feature-implementation
+  - type: enables
+    target: procedure.co-unity.release-verification
+quality_gates:
+  - "No finding reaches the human unverified — every survivor of dedup went through finding-verifier."
+  - "No fix is applied unruled: the human ruled fix, defer or reject on each verified finding."
+  - "The bound gates are green again after the fixes are applied."
+evidence:
+  - "memory/reports/<YYYY-MM-DD>-review-angle-<feature>-<angle>.md"
+  - "memory/reports/<YYYY-MM-DD>-finding-verifier-<feature>-<slug>.md"
+failure_modes:
+  - "A verifier confirms a blocker: present it plainly to the human as a blocker. Never patch a blocker quietly to keep the cycle moving."
+  - "An angle was run ad hoc outside this procedure: its findings are not admissible — re-run it through the procedure."

@@ -1,0 +1,96 @@
+schema_version: "1.0"
+procedure_id: co-unity-feature-planning
+variant: co-unity
+version: "0.1.0"
+title: "Feature Planning"
+phase: 2
+status: active
+owner_agent: architect
+purpose: >
+  Turn one entry of a locked design's feature backlog into a persisted, audited
+  build plan. Read-only reconnaissance always precedes planning; the requirements
+  and architecture documents are written before any code exists; and the plan
+  does not exist until it is persisted under the architecture document's
+  ## Build plan heading.
+inputs:
+  - feature_backlog
+preconditions:
+  - "The parent design is locked at G1 and the feature appears in docs/design/<topic>/backlog.md."
+  - "A feat-<feature> branch exists in Plastic SCM (cm.exe)."
+  - "Orientation is done: memory/workflow.md has been read and cross-checked against cm.exe status --header; any mismatch was raised with the human and ruled, never corrected silently."
+steps:
+  - id: 1
+    agent_key: code-mapper
+    skill_key: research-analysis
+    output_type: code_inventory
+    description: >
+      Map the existing source the feature will touch, read-only — types, call
+      sites, assembly-definition boundaries and the seams a change would cross.
+      Runs in parallel with step 1.5; neither may write.
+  - id: 1.5
+    agent_key: doc-extractor
+    skill_key: research-analysis
+    output_type: doc_extract
+    description: >
+      Extract the canon that governs this feature from the locked design docs
+      and their ADRs, read-only — process docs only; the codex is as-built
+      documentation, not planning canon. Runs in parallel with step 1.
+  - id: 2
+    agent_key: architect
+    skill_key: feature-requirement-doc
+    output_type: requirements_doc
+    description: >
+      Write docs/features/<feature>/requirements.md — the testable, scoped
+      contract for this one feature, traceable to the locked design.
+  - id: 3
+    agent_key: architect
+    skill_key: architecture-doc
+    output_type: architecture_doc
+    description: >
+      Write docs/features/<feature>/architecture.md — components, data
+      contracts and runtime flow, respecting the assembly boundaries the code
+      inventory reported.
+  - id: 4
+    agent_key: architect
+    skill_key: architecture-doc
+    output_type: persisted_plan
+    description: >
+      Persist exactly ONE build phase under the architecture document's
+      ## Build plan heading, as a dated `### Phase <id> — persisted plan
+      (YYYY-MM-DD)` sub-heading. The plan does not exist until it is on disk; a plan
+      that lives only in the conversation is not a plan and may not be built.
+  - id: 5
+    agent_key: plan-validator
+    skill_key: research-analysis
+    output_type: plan_audit
+    description: >
+      Audit the persisted plan against canon — requirements, architecture and
+      the design ADRs — read-only. A canon-conflict finding stops the line and
+      is taken back to the human, not worked around.
+  - id: 6
+    agent_key: vc-checkin
+    skill_key: plastic-checkin
+    output_type: changeset
+    description: >
+      Check the process documents and the persisted plan into the feat-<feature>
+      branch and return cs:N or BLOCKED.
+outputs:
+  - type: persisted_plan
+relations:
+  - type: follows
+    target: procedure.co-unity.system-design
+  - type: enables
+    target: procedure.co-unity.feature-implementation
+quality_gates:
+  - "The plan is persisted on disk under ## Build plan and covers exactly one build phase."
+  - "The plan has been audited by plan-validator and every finding is either resolved or ruled by the human."
+  - "A canon-conflict finding stops the line: the design is reopened with the human before any implementation starts."
+  - "A scope change re-gates with the human rather than being absorbed into the plan."
+evidence:
+  - "docs/features/<feature>/requirements.md"
+  - "docs/features/<feature>/architecture.md"
+  - "memory/reports/<YYYY-MM-DD>-plan-validator-<feature>.md"
+failure_modes:
+  - "The requirements contradict the locked design: stop, reopen the design on a design branch, amend it and re-lock at G1 before planning continues."
+  - "Reconnaissance was skipped or ran after planning: the plan is not trustworthy — discard it and re-run recon first."
+  - "The memory/workflow.md row and the repository disagree: another session may be mid-flight. Warn the human and wait for their call; never correct the log silently."

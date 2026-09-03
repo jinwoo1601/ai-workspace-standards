@@ -1,0 +1,63 @@
+schema_version: "1.0"
+procedure_id: co-unity-environment-bootstrap
+variant: co-unity
+version: "0.1.0"
+title: "Environment Bootstrap"
+phase: 0
+status: active
+owner_agent: stack-setup
+purpose: >
+  Establish the verification contract for a project before any design or feature
+  work begins: confirm that the Windows toolchain is reachable from WSL, register
+  the Plastic SCM workspace, author docs/verification-bindings.md, run every
+  binding once to record a dated baseline, and take a security baseline. Nothing
+  downstream may be verified until a binding exists, because an agent that finds
+  no binding reports that and stops — it never improvises one.
+inputs: []
+preconditions:
+  - "The project has been scaffolded from the co-unity variant and bun scripts/co-unity/plastic-bootstrap.ts has been run."
+  - "The human has confirmed which engine version, render pipeline and XR stack the project targets."
+steps:
+  - id: 1
+    agent_key: stack-setup
+    skill_key: documentation-writing
+    output_type: verification_bindings
+    description: >
+      Verify that cm.exe, dotnet.exe and Unity.exe are reachable from WSL and
+      report the exact versions found; register the Plastic SCM workspace and
+      write ignore.conf; then author docs/verification-bindings.md from the
+      variant template — one numbered binding per gate with its exact command,
+      its expected-green pattern, a dated baseline and any environment quirk
+      that explains a non-code failure. A gate that cannot be run is not bound
+      and must be recorded as unbound rather than guessed at.
+  - id: 2
+    agent_key: test-runner
+    skill_key: test-driven-development
+    output_type: verification_report
+    description: >
+      Run every binding in the file exactly once, as written, and record the
+      result of each as the dated baseline the file will be measured against.
+      Never edit, repair or substitute a command that fails — report it.
+  - id: 3
+    agent_key: security-monitor
+    skill_key: security-scan
+    output_type: security_baseline
+    description: >
+      Take the read-only baseline security scan of the fresh project — secret
+      exposure, dependency and package sources — so that later phase 4 security
+      angles have a starting state to compare against.
+outputs:
+  - type: verification_bindings
+relations:
+  - type: enables
+    target: procedure.co-unity.feature-planning
+quality_gates:
+  - "docs/verification-bindings.md exists and every binding in it runs green, or its failure is attributed in writing to a documented environment quirk."
+  - "The baseline for every binding is dated and recorded in the file before any feature work starts."
+  - "cm.exe, dotnet.exe and Unity.exe are confirmed reachable from WSL with their versions recorded."
+evidence:
+  - "docs/verification-bindings.md"
+  - "memory/reports/<YYYY-MM-DD>-test-runner-baseline.md"
+failure_modes:
+  - "A gate cannot be run as written: it is not bound. Stop and report the unbound gate; never improvise, modify or 'fix' a build command to make it run."
+  - "A toolchain executable is unreachable from WSL: stop and hand the environment problem to the human rather than scaffolding around it."
