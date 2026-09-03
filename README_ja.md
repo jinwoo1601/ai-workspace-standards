@@ -195,7 +195,8 @@ C:\git\ (ワークスペースルート - このリポジトリ)
     ├── co-abap/             # ✅ 安定 — SAP ABAP開発エージェントチーム
     ├── co-hr/               # 🔶 ベータ — 労務・HRコンサルティングエージェントチーム（KR国プロファイル同梱）
     ├── co-safety/           # 🔶 ベータ — EHS/GxPコンプライアンスプラットフォームエージェントチーム（KR国プロファイル同梱）
-    └── co-price/            # 🔶 ベータ — 多業種対応の価格管理・コンサルティングシミュレータ（K-Beautyサンプルデータ同梱）
+    ├── co-price/            # 🔶 ベータ — 多業種対応の価格管理・コンサルティングシミュレータ（K-Beautyサンプルデータ同梱）
+    └── co-unity/            # 🔶 ベータ — Unity/VRゲーム開発エージェントチーム（Plastic SCM、ゲート制の2トラックワークフロー）
 ```
 
 各サブプロジェクトは独自のディレクトリとGitリポジトリに存在します：
@@ -253,6 +254,7 @@ C:\git\
 - **co-hr**: 案件インテーク、対象管轄の労働法コンプライアンス監査（docs/countries/配下の国プロファイル — KRプロファイル同梱）、HRM/HRD設計、組織再編・変革管理を網羅する4段階の労務・HRコンサルティングワークフロー（k-law/k-kosis規制リサーチ連携 — KRスコープのスキルでKR対象プロジェクトのみに付加、12エージェントロスター）
 - **co-safety**: A 6-phase EHS/GxP compliance workflow covering Korean occupational safety (OSHA-KR, SAPA), process safety management (PSM), GxP pharmaceutical quality (GMP/GLP/GDP/GCP/GVP), medical device safety (KGMP-MD, ISO 13485), and 15 industry-specific domains (chemical, construction, semiconductor, battery, shipbuilding, steelmaking, etc.) across a 40+ agent roster
 - **co-price**: 15人の専門エージェント（財務戦略、コスト管理、P&L監査、価格戦略、市場インテリジェンス、エンゲージメント・ディレクション等）を備えた多業種対応の価格管理・コンサルティングシミュレータ（K-Beautyサンプルデータ同梱） — 複数製品・複数チャネルの価格管理、複式簿記P&L予測、市場調査分析（Van Westendorp / Gabor-Granger）、コストショック感応度、流通トレードライン管理をカバー
+- **co-unity**: A gated Unity/VR game-development workflow on two decoupled tracks — a design track from agreed scope (G0) to a human-locked design document and feature backlog (G1), and an implementation track taking one backlog entry through reconnaissance, requirements, architecture, a persisted build plan, implementation, a verified review cycle and human acceptance (G2) to an as-built codex and merge. The PM is the main thread and dispatches only write-authorship and verification; version control is Plastic SCM (Unity Version Control) via cm.exe, and the VR performance budget is a first-class non-functional requirement
 
 **💡 ワークフローの詳細確認方法**
 特定のエージェントロスターとガバナンスフェーズは、各生成プロジェクトのドキュメント内で管理されます。プロジェクトをスキャフォールド後、以下を確認してください：
@@ -280,6 +282,7 @@ C:\git\
 | `co-hr` | 🔶 ベータ | 労務・HRコンサルティングワークフロー — PM、労務コンプライアンスアナリスト、労働関係スペシャリスト、安全衛生担当、採用スペシャリスト、報酬・給与アナリスト、人事評価コンサルタント、L&Dスペシャリスト、キャリア・後継コンサルタント、組織設計コンサルタント、変革管理パートナー、データアナリスト。労働法の適用範囲は国プロファイル経由（KRプロファイル同梱） |
 | `co-safety` | 🔶 ベータ | EHS/GxP compliance platform workflow — PM/CSO, 40+ specialist agents (emergency, compliance, legal, training, PSM, risk, audit, 15 industry domains, 5 GxP domains), k-law regulatory research integration (KR-scoped) |
 | `co-price` | 🔶 ベータ | 多業種対応の価格管理・コンサルティングシミュレータ（K-Beautyサンプルデータ同梱） — PM、リードアーキテクト、コアエンジン開発、CPA監査、財務戦略リード、コスト・資産管理、UX、L10N監査、QA、DevOps、セキュリティ監査/モニター、価格戦略ストラテジスト、市場インテリジェンスアナリスト、エンゲージメントディレクター |
+| `co-unity` | 🔶 ベータ | Unity/VR game development workflow — PM (main thread), Architect, VR UX Designer, Stack Setup, Code Mapper, Doc Extractor, Plan Validator, Code Writer, Test Runner, Review Angle, Finding Verifier, Security Monitor, Gate Preflight, Codex Reconcile, VC Checkin. Plastic SCM version control; G0/G1/G2 human gates |
 
 ### バージョンとバリアントの選択
 

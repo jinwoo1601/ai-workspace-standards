@@ -5,13 +5,7 @@ owner: "architect"
 status: "active"
 version: "0.1.2"
 last_updated: "2026-09-03"
-last_reviewed: "2026-09-01"
-lifecycle:
-  phase: production
-  created: 2026-09-01
-  last_updated: 2026-09-03
-  governance: docs/lifecycle/agents/pm.md
-extends: ../../../agents/pm.md
+extends: ../../common/agents/pm.md
 remove_sections:
   - "## Governance Workflow"
   - "## Updated Role"

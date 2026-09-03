@@ -191,7 +191,8 @@ C:\git\ (raíz del workspace - este repo)
     ├── co-abap/             # ✅ Estable — equipo de agentes para desarrollo SAP ABAP
     ├── co-hr/               # 🔶 Beta — equipo de agentes para consultoría de RR. HH. y relaciones laborales (perfil de país KR incluido)
     ├── co-safety/           # 🔶 Beta — equipo de agentes para plataforma de cumplimiento EHS/GxP (incluye perfil de país KR)
-    └── co-price/            # 🔶 Beta — simulador de gestión y consultoría de precios multi-industria (incluye dataset de muestra K-Beauty)
+    ├── co-price/            # 🔶 Beta — simulador de gestión y consultoría de precios multi-industria (incluye dataset de muestra K-Beauty)
+    └── co-unity/            # 🔶 Beta — equipo de agentes para desarrollo de juegos Unity/VR (Plastic SCM, flujo de dos vías con puertas)
 ```
 
 Cada subproyecto vive en su propio directorio y repositorio git:
@@ -249,6 +250,7 @@ Cada variante de plantilla en este workspace proporciona un **flujo de trabajo m
 - **co-abap**: Un flujo de desarrollo SAP ABAP de 6 fases con orquestación dirigida por PM, seis analistas de módulos SAP (SD, MM, FI, CO, PP, LE), agentes de ejecución técnica y cadenas de QA automatizadas (SyntaxCheck → RunUnitTests → GetCodeCoverage → RunATCCheck)
 - **co-hr**: Un flujo de consultoría de RR. HH. y relaciones laborales de 4 fases que cubre admisión del encargo, auditoría de cumplimiento de la legislación laboral de la jurisdicción objetivo (perfiles de país bajo docs/countries/ — perfil KR incluido), diseño de HRM/HRD y reestructuración organizativa/gestión del cambio, con integración de investigación regulatoria k-law/k-kosis (habilidades de alcance KR, adjuntas solo a proyectos con país KR) en un equipo de 12 agentes
 - **co-safety**: A 6-phase EHS/GxP compliance workflow covering Korean occupational safety (OSHA-KR, SAPA), process safety management (PSM), GxP pharmaceutical quality (GMP/GLP/GDP/GCP/GVP), medical device safety (KGMP-MD, ISO 13485), and 15 industry-specific domains (chemical, construction, semiconductor, battery, shipbuilding, steelmaking, etc.) across a 40+ agent roster
+- **co-unity**: A gated Unity/VR game-development workflow on two decoupled tracks — a design track from agreed scope (G0) to a human-locked design document and feature backlog (G1), and an implementation track taking one backlog entry through reconnaissance, requirements, architecture, a persisted build plan, implementation, a verified review cycle and human acceptance (G2) to an as-built codex and merge. The PM is the main thread and dispatches only write-authorship and verification; version control is Plastic SCM (Unity Version Control) via cm.exe, and the VR performance budget is a first-class non-functional requirement
 
 **💡 Cómo revisar los detalles del flujo de trabajo**
 Las plantillas de agentes específicas y las fases de gobernanza se gestionan dentro de los documentos de cada proyecto generado. Después de crear un proyecto, revise:
@@ -275,6 +277,7 @@ Los nuevos proyectos se generan a partir de variantes de plantillas versionadas.
 | `co-abap` | ✅ Estable | Flujo de desarrollo SAP ABAP — PM, Arquitecto, Programador, Ejecutor de Pruebas, DBA, Admin DevOps, Investigadores SAP, Analistas de Módulos (SD, MM, FI, CO, PP, LE), Expertos Interface/Fiori/Form, Monitor de Seguridad |
 | `co-hr` | 🔶 Beta | Consultoría de RR. HH. y relaciones laborales — PM, Analista de Cumplimiento Laboral, Especialista en Relaciones Laborales, Oficial de Seguridad y Salud, Especialista en Adquisición de Talento, Analista de Compensación y Beneficios, Consultor de Gestión del Desempeño, Especialista en L&D, Consultor de Carrera y Sucesión, Consultor de Diseño Organizacional, Socio de Gestión del Cambio, Analista de Datos. Alcance del derecho laboral mediante perfiles de país (perfil KR incluido) |
 | `co-safety` | 🔶 Beta | EHS/GxP compliance platform workflow — PM/CSO, 40+ specialist agents (emergency, compliance, legal, training, PSM, risk, audit, 15 industry domains, 5 GxP domains), k-law regulatory research integration (KR-scoped) |
+| `co-unity` | 🔶 Beta | Unity/VR game development workflow — PM (main thread), Architect, VR UX Designer, Stack Setup, Code Mapper, Doc Extractor, Plan Validator, Code Writer, Test Runner, Review Angle, Finding Verifier, Security Monitor, Gate Preflight, Codex Reconcile, VC Checkin. Plastic SCM version control; G0/G1/G2 human gates |
 
 ### Selección de versión y variante
 
