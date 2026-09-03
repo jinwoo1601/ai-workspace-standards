@@ -255,6 +255,31 @@
       }
     ]
   },
+  "agent_manifest": {
+    "variant_agents_dir": "agents",
+    "pipeline_order": [
+      "stack-setup",
+      "architect",
+      "vr-ux-designer",
+      "code-mapper",
+      "doc-extractor",
+      "plan-validator",
+      "code-writer",
+      "test-runner",
+      "review-angle",
+      "finding-verifier",
+      "security-monitor",
+      "gate-preflight",
+      "codex-reconcile",
+      "vc-checkin"
+    ],
+    "optional": [
+      "vr-ux-designer",
+      "stack-setup",
+      "security-monitor"
+    ],
+    "notes": "pm is the main thread and is not part of pipeline_order — it dispatches the pipeline rather than sitting in it. vr-ux-designer: skip when the design topic has no VR interaction surface. stack-setup: skip when docs/verification-bindings.md already exists and its baselines are current. security-monitor: skip when the change touches no secrets, dependencies or configuration. code-mapper and doc-extractor always run in parallel and always before planning. test-runner is the only persona that runs verification commands — verification never runs on the main thread."
+  },
   "script_manifest": {
     "variant_scripts_dir": "scripts/co-unity",
     "local": [
