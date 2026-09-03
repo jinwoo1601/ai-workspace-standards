@@ -1,0 +1,61 @@
+schema_version: "1.0"
+procedure_id: co-unity-feature-implementation
+variant: co-unity
+version: "0.1.0"
+title: "Feature Implementation"
+phase: 3
+status: active
+owner_agent: code-writer
+purpose: >
+  Build exactly what the persisted plan specifies and prove it against the bound
+  verification gates. Writing and verifying are separate roles held by separate
+  agents; verification never runs on the main thread; and the write/verify loop
+  is bounded so that a stuck build escalates to the PM instead of drifting.
+inputs:
+  - persisted_plan
+preconditions:
+  - "A persisted, audited build plan exists under the architecture document's ## Build plan heading."
+  - "docs/verification-bindings.md exists and its baselines are current."
+steps:
+  - id: 1
+    agent_key: code-writer
+    skill_key: test-driven-development
+    output_type: implementation
+    description: >
+      Implement the persisted plan and its tests. Every new asset or folder gets
+      its .meta file — a folder's own .meta lives in the parent directory.
+      Respect assembly-definition boundaries; put tests in test assemblies. Run
+      no version-control commands.
+  - id: 2
+    agent_key: test-runner
+    skill_key: test-driven-development
+    output_type: verification_report
+    description: >
+      Run the bound gates exactly as docs/verification-bindings.md writes them
+      and report each result against its expected-green pattern. Steps 1 and 2
+      loop at most three times; on the third non-green result stop and escalate
+      to the PM rather than iterating further.
+  - id: 3
+    agent_key: vc-checkin
+    skill_key: plastic-checkin
+    output_type: changeset
+    description: >
+      Check the implementation in — status, categorize, re-register moved or
+      renamed items, add, checkin, verify — and return cs:N or BLOCKED.
+outputs:
+  - type: implementation
+relations:
+  - type: follows
+    target: procedure.co-unity.feature-planning
+  - type: enables
+    target: procedure.co-unity.feature-review
+quality_gates:
+  - "Every bound gate is green, or its failure is attributed to a quirk that docs/verification-bindings.md already documents."
+  - "Every new asset and every new folder has its .meta file staged with it."
+  - "A 0-tests-ran result with compile errors in the log is a FAIL, never a pass."
+evidence:
+  - "memory/reports/<YYYY-MM-DD>-test-runner-<feature>.md"
+  - "docs/features/<feature>/architecture.md § Build plan"
+failure_modes:
+  - "The plan turns out to be wrong mid-build: stop and report to the PM. Never silently adapt the plan while building it."
+  - "Three write/verify iterations have not produced green: stop and escalate to the PM with the failing output verbatim."

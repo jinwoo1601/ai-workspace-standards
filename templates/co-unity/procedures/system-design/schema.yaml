@@ -1,0 +1,102 @@
+schema_version: "1.0"
+procedure_id: co-unity-system-design
+variant: co-unity
+version: "0.1.0"
+title: "System Design (Design Track)"
+phase: 1
+status: active
+owner_agent: architect
+purpose: >
+  Take one design topic from agreed scope to a human-locked design document and
+  a feature backlog. This is the design track, which runs decoupled from and
+  often far ahead of implementation: it produces intent, never code and never
+  codex pages. The design document is immutable once locked at G1; the codex is
+  untouched for the whole procedure.
+inputs: []
+preconditions:
+  - "G0 is satisfied: a design-<topic> branch exists in Plastic SCM (cm.exe) and the topic's scope is agreed with the human."
+  - "The codex is untouched throughout this procedure — the codex describes systems as built and is written only after G2."
+steps:
+  - id: 1
+    agent_key: architect
+    skill_key: system-design-doc
+    output_type: design_doc
+    description: >
+      Author the design document under docs/design/<topic>/<system>.md — a model
+      plus the dynamics it produces, written as intent. Record open forks
+      explicitly rather than resolving them silently.
+  - id: 1.5
+    agent_key: vr-ux-designer
+    skill_key: system-design-doc
+    output_type: design_doc
+    description: >
+      Optional. For topics with a VR interaction surface, author or supply the
+      UX sections under docs/design/vr-ux/ — comfort, diegesis, voice and
+      gesture input, seated play. Skip entirely when the topic has no VR UX
+      component.
+  - id: 2
+    agent_key: architect
+    skill_key: system-design-doc
+    output_type: design_adr
+    description: >
+      Resolve each contested fork into a design ADR at
+      docs/design/<topic>/decisions/adr-NNNN-<slug>.md. The decisions folder is
+      created lazily and the number sequence is shared across topics — check the
+      highest number already on disk before assigning one.
+  - id: 3
+    agent_key: architect
+    skill_key: system-design-doc
+    output_type: feature_backlog
+    description: >
+      Precondition — G1 has been ruled by the human, in conversation, with the
+      date, and the caller states that ruling in the dispatch. Only then derive
+      the feature backlog from the locked design into
+      docs/design/<topic>/backlog.md: one line per buildable feature, its
+      kebab-case name plus a one-line scope. Do not proceed on silence,
+      enthusiasm, or a 'looks good' about anything other than the gate itself.
+  - id: 4
+    agent_key: vc-checkin
+    skill_key: plastic-checkin
+    output_type: changeset
+    description: >
+      Check the locked design document, its ADRs and docs/design/<topic>/backlog.md
+      into the design-<topic> branch and return cs:N or BLOCKED.
+  - id: 5
+    agent_key: pm
+    skill_key: plastic-checkin
+    output_type: merge_record
+    description: >
+      The merge of design-<topic> into main — the merge ceremony, run by the PM
+      on the main thread per the plastic-checkin merge runbook and never
+      delegated; content conflicts go to the human's Windows Mergetool with the
+      documented click path. Main then holds the locked design, its ADRs and
+      the backlog.
+  - id: 6
+    agent_key: vc-checkin
+    skill_key: plastic-checkin
+    output_type: changeset
+    description: >
+      The bookkeeping commit — the memory/workflow.md row advanced to stage
+      merged and retired now that main holds the design, plus the session log —
+      always a separate changeset after the merge checkin.
+outputs:
+  - type: design_doc
+  - type: feature_backlog
+  - type: merge_record
+relations:
+  - type: enables
+    target: procedure.co-unity.feature-planning
+quality_gates:
+  - "G1 is an explicit in-conversation human ruling recorded with its date. The gate ruling belongs to the human; nothing crosses G1 on the assistant's judgment."
+  - "Every contested fork is either resolved in an ADR or listed as open in the design document — no fork is resolved silently."
+  - "The backlog lists only features derivable from the locked design, one line of scope each."
+  - "The design branch is merged to main only after G1, by the PM's ceremony on the main thread; the merge checkin and the bookkeeping commit are two separate changesets, in that order."
+evidence:
+  - "docs/design/<topic>/<system>.md"
+  - "docs/design/<topic>/decisions/adr-NNNN-<slug>.md"
+  - "docs/design/<topic>/backlog.md"
+  - "memory/workflow.md"
+failure_modes:
+  - "The design contradicts a locked sibling design: stop, reopen that sibling on its own design branch, amend it and re-lock it at G1. Never silently patch a locked design."
+  - "The human has not ruled G1: the backlog step does not run. Preflight and enthusiasm are not acceptance."
+  - "A content conflict appears during the merge: hand it to the human's Mergetool with the documented click path and wait. Never fight it headless, and never kill the mergetool to retry."

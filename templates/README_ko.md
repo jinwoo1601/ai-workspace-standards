@@ -26,7 +26,8 @@ templates/
 ├── co-abap/             # SAP ABAP 개발 variant (stable)
 ├── co-hr/               # 노무/HR 컨설팅 variant (beta)
 ├── co-safety/           # EHS/GxP 컴플라이언스 플랫폼 variant (beta)
-└── co-price/           # 가격 관리 및 컨설팅 variant (beta)
+├── co-price/           # 가격 관리 및 컨설팅 variant (beta)
+└── co-unity/            # Unity/VR 게임 개발 variant (beta, Plastic SCM)
 ```
 
 **동작 방식:** 새 프로젝트를 스캐폴딩할 때, 스크립트는 먼저 `templates/common/`(공유 인프라)을 복사한 다음 선택된 variant를 덮어씁니다(variant 전용 파일이 공통 파일을 재정의).
@@ -49,6 +50,7 @@ templates/
 | [`co-abap`](co-abap/) | ✅ Stable | 20개 에이전트(6개 SAP 모듈 애널리스트, 12개 기술 전문가, pm)와 ABAP 전용 스킬(post-write chain, 성능 튜닝, 덤프 모니터링)을 갖춘 SAP ABAP 개발 워크플로우 |
 | [`co-hr`](co-hr/) | 🔶 Beta | 12개 에이전트(pm + 노무 컴플라이언스, 노사관계, 안전보건, 채용, 보상·복지, 성과관리, L&D, 경력·계승, 조직설계, 변화관리, 데이터 분석 전문가 11인)와 k-law/k-kosis 규제 리서치 연동을 갖춘 노무/HR 컨설팅 워크플로우 (k-law/k-kosis는 KR 스코프 스킬 - KR 대상 프로젝트에만 배포) |
 | [`co-safety`](co-safety/) | 🔶 Beta | 40개 이상 에이전트(PM/CSO, 비상대응, 컴플라이언스, 법률, 교육, PSM, 리스크, 감사, 15개 산업 도메인, 5개 GxP 도메인)와 k-law 규제 리서치 연동을 갖춘 EHS/GxP 컴플라이언스 플랫폼 워크플로우 (한국 전용) |
+| [`co-unity`](co-unity/) | 🔶 Beta | 15개 에이전트(메인 스레드 pm + architect, vr-ux-designer, stack-setup, code-mapper, doc-extractor, plan-validator, code-writer, test-runner, review-angle, finding-verifier, security-monitor, gate-preflight, codex-reconcile, vc-checkin), 10개 variant 스킬, 6개 프로시저를 갖춘 게이트 기반 Unity/VR 게임 개발 워크플로우. G0/G1/G2 휴먼 게이트의 2트랙 구조, cm.exe 기반 Plastic SCM(Unity Version Control) |
 
 ## Phase 1, 2 & 3 고도화 기능
 

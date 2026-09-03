@@ -4,6 +4,7 @@
 
 | Date | Summary |
 |------|---------|
+| [2026-09-03](2026-09-03.md) | feat(co-unity): promote Unity/VR variant template to templates/co-unity (beta v0.1.0) |
 | [2026-09-01](2026-09-01.md) | fix(pipeline): unblock variant promotion and git-less project upgrades |
 | [2026-09-01](2026-09-01.md) | docs(co-unity): register co-unity variant adaptation plan |
 | [2026-08-30](2026-08-30.md) | feat(skills): promote handbook and handbook-sync-audit skills from co-deck to common |

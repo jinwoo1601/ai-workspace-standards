@@ -1,0 +1,46 @@
+# Closed output-type vocabulary for the co-unity variant.
+# Every inputs[], outputs[].type and steps[].output_type value used by
+# procedures/<name>/schema.yaml must be registered here.
+schema_version: "1.0"
+variant: co-unity
+output_types:
+  verification_bindings:
+    description: "The project's docs/verification-bindings.md — the commands test-runner may run, their expected-green patterns, dated baselines and environment quirks."
+  verification_report:
+    description: "A run of the bound verification battery with per-binding command, raw result, green/not-green verdict and quirk attribution."
+  security_baseline:
+    description: "The initial read-only security scan of the project: secret exposure, dependency/package audit and the findings state it establishes."
+  design_doc:
+    description: "A locked-at-G1 system design document under docs/design/<topic>/ stating intent — the model and the dynamics it produces."
+  design_adr:
+    description: "A design decision record at docs/design/<topic>/decisions/adr-NNNN-<slug>.md resolving one contested fork in the design."
+  feature_backlog:
+    description: "The ordered list of buildable features derived from a locked design, each a name plus a one-line scope, at docs/design/<topic>/backlog.md."
+  code_inventory:
+    description: "A read-only map of the existing source relevant to a feature: types, call sites, assembly boundaries and the seams a change would touch."
+  doc_extract:
+    description: "A read-only extract of the canon relevant to a feature, pulled from the design docs and their ADRs — process docs only."
+  requirements_doc:
+    description: "The testable, scoped contract for one buildable feature at docs/features/<feature>/requirements.md."
+  architecture_doc:
+    description: "The component, data-contract and runtime-flow document for one feature at docs/features/<feature>/architecture.md."
+  persisted_plan:
+    description: "The single-phase build plan persisted under the architecture doc's ## Build plan heading — the plan does not exist until it is on disk."
+  plan_audit:
+    description: "An independent audit of the persisted plan against canon (requirements, architecture, design ADRs), including canon-conflict findings."
+  implementation:
+    description: "The source change on disk — code, tests and the .meta files of every asset or folder it creates."
+  review_brief:
+    description: "The reviewer-facing brief for one review cycle: scope, base revision, angles to run and what is out of scope."
+  review_findings:
+    description: "The raw findings produced by one review angle, before dedup and verification."
+  verified_findings:
+    description: "Findings that survived dedup and carry an independent verdict — CONFIRMED, REFUTED, or CONFIRMED-AS-CLARITY — each ready for a human fix/defer/reject ruling."
+  preflight_audit:
+    description: "The pre-acceptance evidence audit: every gate item checked against on-disk evidence, with an explicit PASS/FAIL closing line."
+  codex_pages:
+    description: "As-built codex pages under docs/codex/, written only after G2 — the teammate-facing description of the systems as they exist."
+  merge_record:
+    description: "The record of the merge ceremony run by the PM on the main thread: source, destination, conflicts and how each was resolved."
+  changeset:
+    description: "A committed Plastic SCM changeset (cs:N) produced by vc-checkin, or a BLOCKED report explaining why nothing was committed."

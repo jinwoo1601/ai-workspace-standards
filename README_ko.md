@@ -191,7 +191,8 @@ C:\git\ (워크스페이스 루트 - 현재 저장소)
     ├── co-abap/             # ✅ Stable — SAP ABAP 개발 에이전트 팀
     ├── co-hr/               # 🔶 Beta — 노무/HR 컨설팅 에이전트 팀 (KR 국가 프로필 포함)
     ├── co-safety/           # 🔶 Beta — EHS/GxP 컴플라이언스 플랫폼 에이전트 팀 (KR 국가 프로필 포함)
-    └── co-price/            # 🔶 Beta — 가격 관리 및 컨설팅 시뮬레이터 (K-Beauty 샘플 데이터셋 포함)
+    ├── co-price/            # 🔶 Beta — 가격 관리 및 컨설팅 시뮬레이터 (K-Beauty 샘플 데이터셋 포함)
+    └── co-unity/            # 🔶 Beta — Unity/VR 게임 개발 에이전트 팀 (Plastic SCM, 게이트 기반 2트랙 워크플로)
 ```
 
 각 하위 프로젝트는 자체 디렉토리 및 개별 Git 저장소로 관리됩니다:
@@ -245,6 +246,7 @@ C:\git\
 - **co-abap**: PM 주도 오케스트레이션, 6개 SAP 모듈 애널리스트(SD, MM, FI, CO, PP, LE), 기술 실행 에이전트, 자동화된 QA 체인(SyntaxCheck → RunUnitTests → GetCodeCoverage → RunATCCheck)을 갖춘 6단계 SAP ABAP 개발 워크플로
 - **co-hr**: 인게이지먼트 인테이크, 대상 관할권의 노동법 컴플라이언스 점검(docs/countries/ 하위 국가 프로필 — KR 프로필 기본 포함), HRM/HRD 설계, 조직 재설계/변화관리를 아우르는 4단계 노무/HR 컨설팅 워크플로 — k-law/k-kosis 규제 리서치 연동(KR 스코프 스킬, KR 국가 프로젝트에만 배포), 12개 에이전트 로스터(PM + 전문가 11인)
 - **co-safety**: A 6-phase EHS/GxP compliance workflow covering Korean occupational safety (OSHA-KR, SAPA), process safety management (PSM), GxP pharmaceutical quality (GMP/GLP/GDP/GCP/GVP), medical device safety (KGMP-MD, ISO 13485), and 15 industry-specific domains (chemical, construction, semiconductor, battery, shipbuilding, steelmaking, etc.) across a 40+ agent roster
+- **co-unity**: 두 개의 분리된 트랙으로 진행되는 게이트 기반 Unity/VR 게임 개발 워크플로 — 합의된 범위(G0)에서 사람이 확정하는 설계 문서와 기능 백로그(G1)까지의 설계 트랙, 그리고 백로그 항목 하나를 정찰, 요구사항, 아키텍처, 영속화된 빌드 플랜, 구현, 검증된 리뷰 사이클, 사람의 수용(G2)을 거쳐 as-built 코덱스와 머지까지 이끄는 구현 트랙. PM이 메인 스레드로서 판단·게이트 제시·머지 의식을 유지하고 작성과 검증만 위임하며, 버전 관리는 cm.exe 기반 Plastic SCM(Unity Version Control), VR 성능 예산은 1급 비기능 요구사항으로 다룹니다
 
 **💡 Workflow 상세 정보 확인 방법**
 구체적인 에이전트 명단(Roster)과 거버넌스 단계는 프로젝트 생성 후 해당 프로젝트 폴더 내의 다음 문서들에서 관리 및 확인할 수 있습니다:
@@ -271,6 +273,7 @@ C:\git\
 | `co-abap` | ✅ Stable | SAP ABAP 개발 워크플로 — PM, Architect, Code Writer, Test Runner, DBA, DevOps Admin, SAP Investigators, 모듈 애널리스트(SD, MM, FI, CO, PP, LE), Interface/Fiori/Form 전문가, Security Monitor |
 | `co-hr` | 🔶 Beta | 노무/HR 컨설팅 워크플로 — PM, 노동 컴플라이언스 애널리스트, 노사관계 전문가, 안전보건 담당관, 채용 전문가, 보상·복지 애널리스트, 성과관리 컨설턴트, L&D 전문가, 경력·계승 컨설턴트, 조직설계 컨설턴트, 변화관리 파트너, 데이터 애널리스트. 노동법 적용 범위는 국가 프로필로 연결 (KR 프로필 포함) |
 | `co-safety` | 🔶 Beta | EHS/GxP 컴플라이언스 플랫폼 워크플로우 — PM/CSO, 40개 이상 전문 에이전트 (비상대응, 컴플라이언스, 법률, 교육, PSM, 리스크, 감사, 15개 산업 도메인, 5개 GxP 도메인), k-law 규제 연구 통합 (KR 전용) |
+| `co-unity` | 🔶 Beta | Unity/VR 게임 개발 워크플로 — PM(메인 스레드), Architect, VR UX Designer, Stack Setup, Code Mapper, Doc Extractor, Plan Validator, Code Writer, Test Runner, Review Angle, Finding Verifier, Security Monitor, Gate Preflight, Codex Reconcile, VC Checkin. Plastic SCM 버전 관리, G0/G1/G2 휴먼 게이트 |
 
 ### 버전 및 Variant 선택
 
